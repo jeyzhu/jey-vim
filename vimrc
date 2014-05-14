@@ -1,4 +1,6 @@
 source ~/.vim/bundles.vim
+let g:u_name = 'jeyzhu'
+let g:u_email = 'jeyzhu@anjuke.com'
 filetype plugin indent on " 开启插件
 syntax on " 自动语法高亮
 let mapleader = ","
@@ -132,7 +134,7 @@ noremap <leader>sm :call SetComment()<return>
  func SetComment()
      call setline(line("."),"    /*") 
      call append(line("."), "     * @Func:")
-     call append(line(".")+1, "     * @Author:jeyzhu")
+     call append(line(".")+1, "     * @Author:".g:u_name)
      call append(line(".")+2, "     * @Crate Time:".strftime("%Y-%m-%d %H:%M")) 
      call append(line(".")+3, "     * @Last modified:".strftime("%Y-%m-%d %H:%M")) 
      call append(line(".")+4, "     * @Description:") 
@@ -179,8 +181,8 @@ set t_Co=256
 "vim-powerline 配置结束
 "
 "添加注释信息插件 配置开始
-let g:vimrc_author='jeyzhu' 
-let g:vimrc_email='jeyzhu@anjuke.com' 
+let g:vimrc_author= g:u_name 
+let g:vimrc_email= g:u_email 
 let g:vimrc_homepage='' 
 nmap <leader>ai :AuthorInfoDetect<cr>
 "添加注释信息插件 配置结束
