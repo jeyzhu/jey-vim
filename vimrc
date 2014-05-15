@@ -1,6 +1,11 @@
 source ~/.vim/bundles.vim
-let g:u_name = 'jeyzhu'
-let g:u_email = 'jeyzhu@anjuke.com'
+"=================用户自定义变量=====================
+let g:u_name = 'jeyzhu' "user name
+let g:u_email = 'jeyzhu@anjuke.com' "email
+let u_path = '~/.tmp' "vim tmp 目录
+let u_swap_path=u_path.'/vim/swap' "vim swap 交换文件存放目录
+let g:u_undo_path=u_path.'/vim/undo' "vim undo (撤销操作 文件保存路径) 
+"================用户自定义变量结束===================
 filetype plugin indent on " 开启插件
 syntax on " 自动语法高亮
 let mapleader = ","
@@ -64,14 +69,14 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 set ambiwidth=double
 "
-"交换文件(swrap file)存放路径
-set directory=~/.tmp
+"交换文件(swap file)存放路径
+exe "set directory=".u_swap_path
 "
 " 持久化撤销设置
 if has("persistent_undo")
     set undofile
     set undolevels=1000
-    set undodir=~/.tmp
+    exe "set undodir=".g:u_undo_path
     set undofile
 endif
 "
