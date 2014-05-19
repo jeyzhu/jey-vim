@@ -1,0 +1,216 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+exe "cd " . escape(expand("<sfile>:p:h"), ' ')
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +32 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListSearchProcess.php
+badd +26 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListFilterProcess.php
+badd +31 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListNormalProcess.php
+badd +73 ~/workspace/web/user-site/app-user-touch/controller/user/touch/anjuke/list/List.php
+badd +1 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/ListTools.php
+badd +39 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListCommunityProcess.php
+badd +29 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/AbstractListProcess.php
+badd +50 ~/workspace/web/user-site/app-user-touch/classes/user/touch/http/ListSearchService.php
+badd +8 ~/workspace/web/user-site/app-user-touch/component/user/touch/list/Filter.phtml
+badd +1 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListSchoolProcess.php
+badd +1 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListNearbyProcess.php
+badd +509 ~/workspace/web/user-site/app-user-touch/classes/user/touch/util/BuildUrl.php
+badd +26 ~/workspace/web/user-site/app-user-touch/page/user/touch/anjuke/list/List.phtml
+badd +6 ~/workspace/web/user-site/app-user-touch/component/user/touch/list/Other.phtml
+badd +23 ~/workspace/web/user-site/app-user-touch/component/user/touch/list/List.phtml
+badd +1249 ~/workspace/web/user-site/app-user-touch/config/multicity.php
+badd +1 ~/workspace/web/user-site/app-user-touch/component/user/touch/common/header/LogoBar.php
+badd +1 ~/workspace/web/user-site/app-user-touch/component/user/touch/common/header/LogoBar.phtml
+badd +46 ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListSimilarProcess.php
+badd +98 ~/workspace/web/user-site/app-user-touch/page/user/touch/anjuke/property/View.php
+badd +41 ~/workspace/web/user-site/app-user-touch/page/user/touch/anjuke/list/List.php
+argglobal
+silent! argdel *
+edit ~/workspace/web/user-site/app-user-touch/controller/user/touch/anjuke/list/List.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 386 - ((51 * winheight(0) + 28) / 57)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+386
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListSimilarProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 16 - ((10 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+16
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/component/user/touch/list/Filter.phtml
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 26 - ((25 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+26
+normal! 016|
+tabedit ~/workspace/web/user-site/app-user-touch/page/user/touch/anjuke/list/List.phtml
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 18 - ((12 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+18
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/component/user/touch/common/header/LogoBar.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 5 - ((4 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+5
+normal! 038|
+tabedit ~/workspace/web/user-site/app-user-touch/component/user/touch/common/header/LogoBar.phtml
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 6 - ((5 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+6
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListNormalProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 48 - ((37 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+48
+normal! 016|
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListCommunityProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 13 - ((12 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+13
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListSchoolProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 29 - ((27 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+29
+normal! 06|
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/ListNearbyProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 35 - ((26 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+35
+normal! 0
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/process/AbstractListProcess.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 33 - ((32 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+33
+normal! 018|
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/list/ListTools.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 44 - ((16 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+44
+normal! 013|
+tabedit ~/workspace/web/user-site/app-user-touch/classes/user/touch/http/ListSearchService.php
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+let s:l = 58 - ((0 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+58
+normal! 0
+tabnext 12
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
