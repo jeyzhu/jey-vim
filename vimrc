@@ -1,8 +1,9 @@
-source ~/.vim/bundles.vim
+source ~/.vim/plugins.vim
 "=================用户自定义变量=====================
 let g:u_name = 'jeyzhu' "user name
 let g:u_email = 'jeyzhu@anjuke.com' "email
 let u_path = '~/.tmp' "vim tmp 目录
+source ~/.vim/user.config "使用用户自己的配置 覆盖如上的变量
 let u_swap_path=u_path.'/vim/swap' "vim swap 交换文件存放目录
 let g:u_undo_path=u_path.'/vim/undo' "vim undo (撤销操作 文件保存路径) 
 "================用户自定义变量结束===================
