@@ -18,7 +18,7 @@ Plugin 'scrooloose/nerdcommenter'
 "目录文件导航
 Plugin 'scrooloose/nerdtree'
 "Vim 中文Help Doc
-"Plugin 'asins/vimcdoc'
+Plugin 'asins/vimcdoc'
 "Markdown
 "Plugin 'plasticboy/vim-markdown'
 "VIM 显示增强
