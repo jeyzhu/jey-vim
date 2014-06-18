@@ -138,6 +138,7 @@ let javascript_enable_domhtmlcss=1
 noremap <leader>sm :call SetComment()<return>
 "/* 加入注释 */
  func SetComment()
+     normal o
      call setline(line("."),"    /*") 
      call append(line("."), "     * @Func:")
      call append(line(".")+1, "     * @Author:".g:u_name)
@@ -147,6 +148,29 @@ noremap <leader>sm :call SetComment()<return>
      call append(line(".")+5, "     * @Return:")
      call append(line(".")+6, "     */") 
  endfunc
+
+"echo php print_r debug
+noremap <leader>pr :call EchoPrintR()<return>
+"print_r function
+ func EchoPrintR()
+     normal o
+     call setline('.', "echo '<pre>';")
+     let firstLn = line('.')
+     normal o
+     call setline('.', 'print_r();')
+     let gotoLn = line('.')
+     normal o
+     call setline('.', "echo '</pre>';")
+     normal o
+     call setline('.', 'exit();')
+     exe 'normal '.firstLn.'G'
+     exe 'normal 4V='
+     exe 'normal '.gotoLn.'G'
+     exe "normal /)\<CR>"
+     startinsert
+ endfunc
+"insert status echo print_r
+imap <C-T> <pre><CR>print_r()<C-O>mz;<CR></pre><C-O>`z 
 "
 "CtrlP插件	查找并打开文件
 nnoremap <leader>tp :CtrlP<return> "文件搜索模式打开
