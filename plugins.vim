@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "let Vundle manage Vundle
 "required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 "My bundles here:
 "original repos on GitHub (来自 github  只要写 作者名/项目名)
 Plugin 'kien/ctrlp.vim'
@@ -22,7 +22,8 @@ Plugin 'asins/vimcdoc'
 "Markdown
 "Plugin 'plasticboy/vim-markdown'
 "VIM 显示增强
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
 "缩进标识/标尺 
 Plugin 'Yggdroot/indentLine'
 " 颜色
