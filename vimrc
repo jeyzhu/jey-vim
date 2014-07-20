@@ -235,3 +235,4 @@ autocmd BufWinEnter \[Buf\ List\] setl nonumber
 "
 "手工折叠代码
 nmap <leader>fd :set fdm=manual<return>
+

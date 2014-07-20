@@ -28,6 +28,8 @@ Plugin 'bling/vim-airline'
 Plugin 'Yggdroot/indentLine'
 " 颜色
 Plugin 'tomasr/molokai'
+"tabline 很赞的插件
+Plugin 'mkitt/tabline.vim'
 "session 管理插件
 Plugin 'vim-scripts/sessionman.vim'
 "标签插件 快速定位插件
@@ -38,6 +40,8 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/winmanager'
 "bufexplorer 管理 打开的文件列表快速切换
 Plugin 'vim-scripts/bufexplorer.zip'
+"Plugin 'fholgado/minibufexpl.vim'
+"snipmate
 Plugin 'msanders/snipmate.vim'
 " vim-scripts repos (来自vim-scripts 直接写 插件名)
 "添加注释信息插件
