@@ -10,8 +10,11 @@ let g:u_undo_path=u_path.'/vim/undo' "vim undo (撤销操作 文件保存路径)
 filetype plugin indent on " 开启插件
 syntax on " 自动语法高亮
 let mapleader = ","
+nnoremap \ ,
 colorscheme molokai "设定配色方案
 "set cuc " 设置标尺来显示代码对齐
+set list " 显示行尾换行符号
+"set cc=80
 set number " 显示行号
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
@@ -85,8 +88,8 @@ endif
 set helplang=cn
 "
 " 高亮显示当前行配置开始
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+"hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 " 高亮显示当前行配置结束
 " 关闭VIM的时候保存会话
 set sessionoptions=buffers,sesdir,help,tabpages,winsize
@@ -128,7 +131,7 @@ nmap <Leader>tn :tabnew<return>
 
 " Python 文件的一般设置，比如不要 tab 等
 autocmd FileType python set autoindent smartindent tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType python map <F5> :!python %<CR>
+"autocmd FileType python map <F5> :!python %<CR>
 
 " 打开javascript折叠
 let b:javascript_fold=1
@@ -199,9 +202,10 @@ nmap <leader>sc :SessionClose<CR>
 "sessionman 配置结束
 "
 "indentline 缩进标识 配置开始 
-let g:indentLine_enabled = 0
+let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
-"let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_color_gui = '#A4E57E'
+"let g:indentLine_char = '︙'
 nnoremap <leader>ig :IndentLinesToggle<CR>:set list! lcs=tab:\\|\<Space><CR>
 "indentline 缩进标识 配置结束 
 "
@@ -236,3 +240,55 @@ autocmd BufWinEnter \[Buf\ List\] setl nonumber
 "手工折叠代码
 nmap <leader>fd :set fdm=manual<return>
 
+"每次保存自动生成 tag
+"autocmd BufWritePost * call system("ctags -R")
+
+function! GenerateCtags()
+    exe "cd " . Find_project_root()
+    if &filetype == 'c' || &filetype == 'cpp'
+        call system('ctags -R --c++-types=+p --fields=+iaS --extra=+q .')
+    elseif &filetype == "verilog"
+        call system ('ctags --language-force=verilog -R .')
+    else
+        echohl  ErrorMsg | echo "Generate tags fail!" | echohl None
+    endif
+        exe 'set tags+=' . Find_project_root() .'/tags'
+endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"look up project root directory
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !exists('g:project_root_marker')
+  let g:project_root_marker = [".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
+endif
+
+function! Find_project_root()
+    let project_root = fnamemodify(".", ":p:h")
+
+    if !empty(g:project_root_marker)
+        let root_found = 0
+        let candidate = fnamemodify(project_root, ":p:h")
+        let last_candidate = ""
+
+        while candidate != last_candidate
+            for tags_dir in g:project_root_marker
+                let tags_dir_path = candidate . "/" . tags_dir
+                if filereadable(tags_dir_path) || isdirectory(tags_dir_path)
+                    let root_found = 1
+                    break
+                endif
+            endfor
+
+            if root_found
+                let project_root = candidate
+                break
+            endif
+
+            let last_candidate = candidate
+            let candidate = fnamemodify(candidate, ":p:h:h")
+        endwhile
+
+        return root_found ? project_root : fnamemodify(".", ":p:h")
+    endif
+
+    return project_root
+endfunction

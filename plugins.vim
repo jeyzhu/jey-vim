@@ -20,7 +20,7 @@ Plugin 'scrooloose/nerdtree'
 "Vim 中文Help Doc
 Plugin 'asins/vimcdoc'
 "Markdown
-"Plugin 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 "VIM 显示增强
 "Plugin 'Lokaltog/vim-powerline'
 Plugin 'bling/vim-airline'
@@ -40,12 +40,20 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/winmanager'
 "bufexplorer 管理 打开的文件列表快速切换
 Plugin 'vim-scripts/bufexplorer.zip'
+"c
+Plugin 'vim-scripts/c.vim'
 "Plugin 'fholgado/minibufexpl.vim'
 "snipmate
 Plugin 'msanders/snipmate.vim'
 " vim-scripts repos (来自vim-scripts 直接写 插件名)
 "添加注释信息插件
 Plugin 'AuthorInfo'
+"php debuger
+"Plugin 'vim-scripts/DBGp-client'
+"Plugin 'vim-scripts/debugger.py'
+Plugin 'joonty/vdebug.git'
+"Plugin 'brookhong/DBGPavim'
+Plugin 'scrooloose/syntastic' "语法错误自动检测
 "
 " non-GitHub repos (自己的git库插件)
 "Plugin 'git://git.wincent.com/command-t.git'
