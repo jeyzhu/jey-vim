@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 "My bundles here:
 "original repos on GitHub (来自 github  只要写 作者名/项目名)
 Plugin 'kien/ctrlp.vim'
+"git 插件
+Plugin 'tpope/vim-fugitive'
 "代码补全插件
 "Plugin 'Shougo/neocomplcache'
 "Plugin 'Shougo/neosnippet'
